@@ -8,7 +8,7 @@ module ApplicationHelper
 
   def pull_validation
     unless File.exist?($ion);File.new($ion,"w+").write(JSON.generate({"gat"=>"0"}));sleep(1.5);end
-    @gat||=JSON.parse(File.read($ion))["gat"].to_i
+    @gat ||= JSON.parse(File.read($ion))["gat"].to_i
     puts @gat
     @gat
   end
